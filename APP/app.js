@@ -40,6 +40,19 @@ app.get('/', (req, res) => {
   res.render('home', { posts });
 });
 
+app.get('/post/:id', (req, res) => {
+  // retreve post form posts , matching id in the passed query
+  const post = posts.filter(post => {
+    return post.id === req.params.id;
+  });
+  // render the matching post, and pass past details as params.
+  res.render('post', {
+    author: post.author,
+    title: post.title,
+    body: post.body
+  });
+});
+
 const PORT = 8080;
 
 app.listen(PORT, () => {
