@@ -34,6 +34,12 @@ const app = express();
 // set ejs as view engine
 app.set('view engine', 'ejs');
 
+// route to home page
+app.get('/', (req, res) => {
+  // render home page with posts passed as params to home.ejs
+  res.render('home', { posts });
+});
+
 const PORT = 8080;
 
 app.listen(PORT, () => {
