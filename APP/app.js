@@ -28,8 +28,11 @@ const posts = [
     body: 'Blog post number 4'
   }
 ];
-
+// initiated express
 const app = express();
+
+// set ejs as view engine
+app.set('view engine', 'ejs');
 
 const PORT = 8080;
 
