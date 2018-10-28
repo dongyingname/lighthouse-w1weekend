@@ -1,0 +1,1 @@
+"Node fs is reading this file "
