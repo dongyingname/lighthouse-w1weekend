@@ -8,8 +8,9 @@ const options = {
 
 // callback called by https when request is made
 
-const callBack = () => {
+const callBack = res => {
   console.log('In response handler callback');
+  console.log('response:', res);
 };
 
 console.log('i am about to make a request');
