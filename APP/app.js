@@ -43,9 +43,9 @@ app.get('/', (req, res) => {
 app.get('/post/:id', (req, res) => {
   // retreve post form posts , matching id in the passed query
   const post = posts.filter(post => {
-    return post.id === req.params.id;
-  });
-  // render the matching post, and pass past details as params.
+    return post.id == req.params.id;
+  })[0];
+  // render the matching post, and pass post details as params.
   res.render('post', {
     author: post.author,
     title: post.title,
